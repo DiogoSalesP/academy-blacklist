@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-12-11T10:29:15.026316" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/home/diogo/Documentos/academy-blacklist/tests/ui/login/login.robot">
+<test id="s1-t1" name="Cenario 01: Login de usuário com sucesso" line="9">
+<kw name="Abrir Navegador" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-11T10:29:15.515565" level="INFO">Opening browser 'Chrome' to base url 'https://blacklist.qacoders.dev.br'.</msg>
+<arg>${BASE_URL_UI}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-11T10:29:15.515306" elapsed="2.738825"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-11T10:29:18.254591" elapsed="0.042553"/>
+</kw>
+<status status="PASS" start="2025-12-11T10:29:15.514163" elapsed="2.783160"/>
+</kw>
+<kw name="Dado que estou na página de login" owner="login">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${BASE_URL_UI}/login</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-12-11T10:29:18.298284" elapsed="0.913331"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-12-11T10:29:19.220694" level="INFO">Current location is 'https://blacklist.qacoders.dev.br/login'.</msg>
+<arg>${BASE_URL_UI}/login</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.211996" elapsed="0.008910"/>
+</kw>
+<status status="PASS" start="2025-12-11T10:29:18.297714" elapsed="0.923309"/>
+</kw>
+<kw name="Quando eu inserir um usuário válido e senha válida" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ID_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.221651" elapsed="0.023638"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-11T10:29:19.245821" level="INFO">Typing text 'blacklist_robot@qa.com' into text field 'id:email'.</msg>
+<arg>${ID_EMAIL}</arg>
+<arg>${USER_MAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.245553" elapsed="0.212089"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ID_PASSWORD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.458042" elapsed="0.035668"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-12-11T10:29:19.494199" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-12-11T10:29:19.546693" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${ID_PASSWORD}</arg>
+<arg>${USER_PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.493924" elapsed="0.146019"/>
+</kw>
+<status status="PASS" start="2025-12-11T10:29:19.221335" elapsed="0.418746"/>
+</kw>
+<kw name="E clicar no botão de login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ID_LOGIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.641070" elapsed="0.025156"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-11T10:29:19.667898" level="INFO">Clicking button 'id:login'.</msg>
+<arg>${ID_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.666963" elapsed="0.177800"/>
+</kw>
+<status status="PASS" start="2025-12-11T10:29:19.640481" elapsed="0.204426"/>
+</kw>
+<kw name="Então devo ser redirecionado para a página Home" owner="login">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${BASE_URL_UI}/home</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-12-11T10:29:19.845617" elapsed="1.792489"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-12-11T10:29:21.648756" level="INFO">Current location is 'https://blacklist.qacoders.dev.br/home'.</msg>
+<arg>${BASE_URL_UI}/home</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-12-11T10:29:21.638866" elapsed="0.010103"/>
+</kw>
+<status status="PASS" start="2025-12-11T10:29:19.845217" elapsed="1.804033"/>
+</kw>
+<kw name="Fechar Navegador" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-11T10:29:21.651859" elapsed="0.095513"/>
+</kw>
+<status status="PASS" start="2025-12-11T10:29:21.650542" elapsed="0.096942"/>
+</kw>
+<doc>Realizar login</doc>
+<status status="PASS" start="2025-12-11T10:29:15.513422" elapsed="6.234159"/>
+</test>
+<status status="PASS" start="2025-12-11T10:29:15.027212" elapsed="6.720995"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
