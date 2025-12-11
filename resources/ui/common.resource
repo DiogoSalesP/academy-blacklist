@@ -15,7 +15,7 @@ Abrir Navegador Interface
     Maximize Browser Window
 
 Abrir Navegador Headless
-    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChormeOptions()    sys, selenium.wedriver
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${options}    add_argument    headless
     Call Method    ${options}    add_argument    no-sanbox
     Call Method    ${options}    add_argument    disable-dev-shm-usage
