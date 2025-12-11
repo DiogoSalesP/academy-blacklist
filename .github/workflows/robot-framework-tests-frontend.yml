@@ -48,7 +48,6 @@ jobs:
 
       - name: Check Test Results
         run: |
-          cd /results
           if grep -q "FAIL" output.xml; then
             echo "❌ Testes falharam!"
             exit 1
