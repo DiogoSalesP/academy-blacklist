@@ -43,7 +43,6 @@ jobs:
         env:
           CI: true
         run: |
-          cd robot-framework-testes-frontend
           robot --outputdir results tests/ui/login/
         continue-on-error: false
 
